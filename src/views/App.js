@@ -1,7 +1,14 @@
 import logo from "./logo.svg";
 import "./App.scss";
+import MyComponent from "./example/MyComponent";
+
+/**
+ *  2 components: class component / function component (function,arrow)
+ * JSX (code html trong javascript thay vi tra 1 bien)
+ */
 
 function App() {
+  // const App = () =>{} -> function component
   return (
     <div className="App">
       <header className="App-header">
@@ -15,6 +22,8 @@ function App() {
         >
           Learn React
         </a>
+        <MyComponent />
+        {/* <MyComponent></MyComponent> */}
       </header>
     </div>
   );
