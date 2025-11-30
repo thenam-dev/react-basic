@@ -1,4 +1,5 @@
 /**
+ * JSX (code html trong javascript thay vi tra 1 bien)
  * How to create a component(vien gach tao nen bo cuc cua Reactjs)
  * import
  * write 1 class component

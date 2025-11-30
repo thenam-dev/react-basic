@@ -4,7 +4,7 @@ import MyComponent from "./example/MyComponent";
 
 /**
  *  2 components: class component / function component (function,arrow)
- * JSX (code html trong javascript thay vi tra 1 bien)
+ *
  */
 
 function App() {
