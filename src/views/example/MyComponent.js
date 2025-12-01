@@ -18,8 +18,10 @@ class MyComponent extends React.Component {
   };
 
   handleOnChangeName = (event) => {
+    //auto merge - cap nhat state
     this.setState({
       name: event.target.value,
+      address: "Vietnam",
     });
   };
 
@@ -29,9 +31,11 @@ class MyComponent extends React.Component {
     alert("click me");
   };
 
+  //re-render
   render() {
     // let name = "thenam"; // variable in JSX
 
+    console.log(">>>call render:", this.state);
     return (
       // dung fragment thay vi boc bang div
       <React.Fragment>
