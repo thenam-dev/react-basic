@@ -22,6 +22,13 @@ class MyComponent extends React.Component {
       name: event.target.value,
     });
   };
+
+  //su dung arrow function de xu li Events
+  handleClickButton = () => {
+    console.log("hit the button");
+    alert("click me");
+  };
+
   render() {
     // let name = "thenam"; // variable in JSX
 
@@ -37,6 +44,15 @@ class MyComponent extends React.Component {
           Hello my component, My name is {this.state.name}
         </div>
         <div className="second">I was born in {this.state.address}</div>
+        <div className="third">
+          <button
+            onClick={() => {
+              this.handleClickButton();
+            }}
+          >
+            Click me
+          </button>
+        </div>
       </React.Fragment>
     );
   }
