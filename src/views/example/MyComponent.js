@@ -12,52 +12,102 @@ import React from "react";
 
 class MyComponent extends React.Component {
   //key:value
+  // state = {
+  //   name: "thenam",
+  //   address: "Hanoi",
+  // };
+
   state = {
-    name: "thenam",
-    address: "Hanoi",
+    firstName: "Nam",
+    lastName: "Nguyen",
   };
 
-  handleOnChangeName = (event) => {
-    //auto merge - cap nhat state
+  handleChangeFirstName = (event) => {
     this.setState({
-      name: event.target.value,
-      address: "Vietnam",
+      firstName: event.target.value,
     });
   };
 
-  //su dung arrow function de xu li Events
-  handleClickButton = () => {
-    console.log("hit the button");
-    alert("click me");
+  handleChangeLastName = (event) => {
+    this.setState({
+      lastName: event.target.value,
+    });
   };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    alert("click submit");
+  };
+
+  // handleOnChangeName = (event) => {
+  //   //auto merge - cap nhat state
+  //   this.setState({
+  //     name: event.target.value,
+  //     address: "Vietnam",
+  //   });
+  // };
+
+  // //su dung arrow function de xu li Events
+  // handleClickButton = () => {
+  //   console.log("hit the button");
+  //   alert("click me");
+  // };
 
   //re-render
   render() {
-    // let name = "thenam"; // variable in JSX
-
     console.log(">>>call render:", this.state);
     return (
-      // dung fragment thay vi boc bang div
-      <React.Fragment>
-        <div className="first">
+      // // dung fragment thay vi boc bang div
+      // <React.Fragment>
+      //   <div className="first">
+      //     <input
+      //       value={this.state["name"]}
+      //       type="text"
+      //       onChange={(event) => this.handleOnChangeName(event)}
+      //     />
+      //     Hello my component, My name is {this.state.name}
+      //   </div>
+      //   <div className="second">I was born in {this.state.address}</div>
+      //   <div className="third">
+      //     <button
+      //       onClick={() => {
+      //         this.handleClickButton();
+      //       }}
+      //     >
+      //       Click me
+      //     </button>
+      //   </div>
+      // </React.Fragment>
+      <>
+        <form action="/action_page.php">
+          <label htmlFor="fname">First name:</label>
+          <br />
           <input
-            value={this.state["name"]}
             type="text"
-            onChange={(event) => this.handleOnChangeName(event)}
+            id="fname"
+            name="fname"
+            value={this.state.firstName}
+            onChange={(event) => this.handleChangeFirstName(event)}
           />
-          Hello my component, My name is {this.state.name}
-        </div>
-        <div className="second">I was born in {this.state.address}</div>
-        <div className="third">
-          <button
-            onClick={() => {
-              this.handleClickButton();
-            }}
-          >
-            Click me
-          </button>
-        </div>
-      </React.Fragment>
+          <br />
+          <label htmlFor="lname">Last name:</label>
+          <br />
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            value={this.state.lastName}
+            onChange={(event) => this.handleChangeLastName(event)}
+          />
+          <br />
+          <br />
+          <input
+            type="button"
+            value="Submit"
+            onClick={(event) => this.handleSubmit(event)}
+          />
+        </form>
+      </>
     );
   }
 }

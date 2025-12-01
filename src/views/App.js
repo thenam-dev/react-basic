@@ -14,14 +14,14 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello world with React.js (TheNam-Dev)</p>
-        <a
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
         <MyComponent />
         {/* <MyComponent></MyComponent> */}
       </header>
