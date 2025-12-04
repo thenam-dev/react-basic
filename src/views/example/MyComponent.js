@@ -38,6 +38,7 @@ class MyComponent extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     alert("click submit");
+    console.log(">>> check data input:", this.state);
   };
 
   // handleOnChangeName = (event) => {
@@ -56,7 +57,7 @@ class MyComponent extends React.Component {
 
   //re-render
   render() {
-    console.log(">>>call render:", this.state);
+    console.log(">>>check props:", this.state);
     return (
       // // dung fragment thay vi boc bang div
       // <React.Fragment>
@@ -108,10 +109,7 @@ class MyComponent extends React.Component {
             onClick={(event) => this.handleSubmit(event)}
           />
         </form>
-
-        <ChildComponent name={"child one"} />
-        <ChildComponent name={"child two"} />
-        <ChildComponent name={"child three"} />
+        <ChildComponent name={"child one"} age={"25"} />
       </>
     );
   }
