@@ -27,6 +27,13 @@ class MyComponent extends React.Component {
     ],
   };
 
+  addNewJob = (job) => {
+    console.log("???check job from parent:", job);
+    this.setState({
+      arrJobs: [...this.state.arrJobs, job],
+    });
+  };
+
   // handleOnChangeName = (event) => {
   //   //auto merge - cap nhat state
   //   this.setState({
@@ -67,7 +74,7 @@ class MyComponent extends React.Component {
       //   </div>
       // </React.Fragment>
       <>
-        <AddComponent />
+        <AddComponent addNewJob={this.addNewJob} />
 
         <ChildComponent
           name={this.state.firstName + " " + this.state.lastName}
