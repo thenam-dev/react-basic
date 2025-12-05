@@ -10,6 +10,7 @@
 
 import React from "react";
 import ChildComponent from "./ChildComponent";
+import AddComponent from "./AddComponent";
 
 class MyComponent extends React.Component {
   //key:value
@@ -19,31 +20,11 @@ class MyComponent extends React.Component {
   // };
 
   state = {
-    firstName: "Nam",
-    lastName: "Nguyen",
     arrJobs: [
       { id: "a123", title: "developer", salary: "1000" },
       { id: "a124", title: "tester", salary: "500" },
       { id: "a125", title: "project manager", salary: "1500" },
     ],
-  };
-
-  handleChangeFirstName = (event) => {
-    this.setState({
-      firstName: event.target.value,
-    });
-  };
-
-  handleChangeLastName = (event) => {
-    this.setState({
-      lastName: event.target.value,
-    });
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    alert("click submit");
-    console.log(">>> check data input:", this.state);
   };
 
   // handleOnChangeName = (event) => {
@@ -86,34 +67,8 @@ class MyComponent extends React.Component {
       //   </div>
       // </React.Fragment>
       <>
-        <form action="/action_page.php">
-          <label htmlFor="fname">First name:</label>
-          <br />
-          <input
-            type="text"
-            id="fname"
-            name="fname"
-            value={this.state.firstName}
-            onChange={(event) => this.handleChangeFirstName(event)}
-          />
-          <br />
-          <label htmlFor="lname">Last name:</label>
-          <br />
-          <input
-            type="text"
-            id="lname"
-            name="lname"
-            value={this.state.lastName}
-            onChange={(event) => this.handleChangeLastName(event)}
-          />
-          <br />
-          <br />
-          <input
-            type="button"
-            value="Submit"
-            onClick={(event) => this.handleSubmit(event)}
-          />
-        </form>
+        <AddComponent />
+
         <ChildComponent
           name={this.state.firstName + " " + this.state.lastName}
           age={"21"}
