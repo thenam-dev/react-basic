@@ -1,4 +1,5 @@
 import React from "react";
+import "./Demo.scss";
 
 class ChildComponent extends React.Component {
   //Re-render
@@ -33,7 +34,9 @@ class ChildComponent extends React.Component {
         <br />
         {showJobs === false ? (
           <div>
-            <button onClick={() => this.handleShowHide()}>Show</button>
+            <button className="btn-show" onClick={() => this.handleShowHide()}>
+              Show
+            </button>
           </div>
         ) : (
           <>
@@ -51,7 +54,12 @@ class ChildComponent extends React.Component {
               {/* {console.log(">>>check map array:", a)} */}
             </div>
             <div>
-              <button onClick={() => this.handleShowHide()}>Hide</button>
+              <button
+                style={{ color: "blue" }}
+                onClick={() => this.handleShowHide()}
+              >
+                Hide
+              </button>
             </div>
           </>
         )}
