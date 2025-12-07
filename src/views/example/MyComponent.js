@@ -46,6 +46,19 @@ class MyComponent extends React.Component {
     });
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log(
+      ">>>run did update",
+      "prev state:",
+      prevState,
+      "current state:",
+      this.state
+    );
+  }
+  componentDidMount() {
+    console.log(">>>run component did mount");
+  }
+
   // handleOnChangeName = (event) => {
   //   //auto merge - cap nhat state
   //   this.setState({
@@ -62,7 +75,7 @@ class MyComponent extends React.Component {
 
   //re-render
   render() {
-    console.log(">>>check props:", this.state);
+    console.log(">>>call render", this.state);
     return (
       // // dung fragment thay vi boc bang div
       // <React.Fragment>
