@@ -23,12 +23,18 @@ function App() {
           <Nav />
           <img src={logo} className="App-logo" alt="logo" />
 
-          <Routes>
-            <Route path="/" exact element={<Home />} />
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
 
-            <Route path="/todos" element={<ListTodo />} />
-            <Route path="/about" element={<MyComponent />} />
-          </Routes>
+            <Route path="/todos">
+              <ListTodo />
+            </Route>
+            <Route path="/about">
+              <MyComponent />
+            </Route>
+          </Switch>
         </header>
         <ToastContainer
           position="top-right"
