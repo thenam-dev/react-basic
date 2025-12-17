@@ -4,6 +4,7 @@ import MyComponent from "./example/MyComponent";
 import ListTodo from "./Todos/ListTodo";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ListUser from "./Users/ListUser";
 
 import Nav from "./Nav/Nav";
 import Home from "./example/Home";
@@ -16,6 +17,7 @@ import { BrowserRouter, Routes, Route, Link, Switch } from "react-router-dom";
 
 function App() {
   // const App = () =>{} -> function component
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -34,8 +36,12 @@ function App() {
             <Route path="/about">
               <MyComponent />
             </Route>
+            <Route path="/user">
+              <ListUser />
+            </Route>
           </Switch>
         </header>
+
         <ToastContainer
           position="top-right"
           autoClose={5000}
